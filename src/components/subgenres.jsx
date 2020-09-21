@@ -24,6 +24,7 @@ const Subgenres = ({
   };
 
   const nextHandler = () => {
+      console.log(validateSubgenres(), validateAddNew());
     if (!validateSubgenres().error !== !validateAddNew().error) {
       onAddSubgenre(selectedSubgenre);
       onAddNewSubgenre(addNewSubgenre);
@@ -43,7 +44,7 @@ const Subgenres = ({
   };
 
   const validateAddNew = () => {
-    const addNewSchema = Joi.boolean().valid(true);
+    const addNewSchema = Joi.boolean().valid(true).required();
     return addNewSchema.validate(addNewSubgenre);
   };
 
