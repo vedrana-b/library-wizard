@@ -24,7 +24,6 @@ const Subgenres = ({
   };
 
   const nextHandler = () => {
-      console.log(validateSubgenres(), validateAddNew());
     if (!validateSubgenres().error !== !validateAddNew().error) {
       onAddSubgenre(selectedSubgenre);
       onAddNewSubgenre(addNewSubgenre);
