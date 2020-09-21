@@ -1,0 +1,11 @@
+$basicGray: #dfe3e4;
+$buttonBorder: darken($color: #dfe3e4, $amount: 30);
+$buttonActiveHoverBg: darken($color: #3498db, $amount: 10%);
+$buttonActiveBg: #3498db;
+$buttonInactiveBg: rgba(0, 0, 0, 0.6);
+$buttonInactiveHoverClr: rgba(0, 0, 0, 0.8);
+$buttonInactiveHoverBg: #cacbcd;
+$buttonInactiveClr: #e0e1e2;
+
+$errorClr: #b33f3d;
+$stepBg: #2ecc71;

@@ -1,0 +1,16 @@
+.success-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    &__logo {
+        height: 6.25rem;
+    }
+    &__btn {
+        margin-top: 3rem;
+    }
+    &__text {
+        margin-top: 2rem;
+    }
+}

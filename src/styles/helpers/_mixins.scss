@@ -1,0 +1,12 @@
+@mixin button($width) {
+    border-radius: 4px;
+    padding: .400rem .750rem;
+    width: $width;
+}
+
+@mixin input {
+    border: 1px solid $basicGray;
+    border-radius: 4px;
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+}

@@ -1,0 +1,9 @@
+.error {
+    flex-direction: column;
+    &__msg {
+        color: $errorClr;
+        font-size: 12px;
+        margin-top: .500rem;
+        margin-left: .250rem;
+    }
+  }

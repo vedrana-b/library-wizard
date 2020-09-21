@@ -1,0 +1,60 @@
+/*@import "../helpers/variables";
+@import "../helpers/mixins";*/
+
+
+.button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    &__genre {
+        border: 1px solid $buttonBorder;
+        border-radius: 4px;
+        margin-right: 1rem;
+        margin-bottom: 0.75rem;
+        padding: 0.75rem 0.85rem;
+        text-align: center;
+        width: 100px;
+        &.active {
+            background-color: $buttonActiveBg;
+            color: white;
+        }
+        &:hover {
+            border: $buttonActiveBg 1px solid;
+        }
+    }
+    &__control {
+        @include button($width: 5.9375rem);
+        &--next {
+            background-color: $buttonActiveBg;
+            color: white;
+            margin-left: 0.75rem;
+            &:hover {
+                background-color: $buttonActiveHoverBg;
+            }
+        }
+        &--back {
+            color: $buttonInactiveBg;
+            background-color: $buttonInactiveClr;
+            &:hover {
+                color: $buttonInactiveHoverClr;
+                background-color: $buttonInactiveHoverBg;
+            }
+        }
+    }
+    &__icon {
+        float: left;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    &__success {
+        @include button($width: 12.5rem);
+    }
+}
+
+.buttons {
+  justify-content: flex-end;
+}
+
+:focus {
+  outline: none;
+}

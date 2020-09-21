@@ -1,0 +1,53 @@
+.book {
+    &__label {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        margin-bottom: 1rem;
+        width: 100%;
+        &--sm {
+            width: 45%;
+        }
+    }
+    &__input {
+        @include input;
+        &--md {
+            width: 12.5rem;
+        }
+        &--sm {
+            width: 9.375rem;
+        }
+    }
+    &__textarea {
+        @include input;
+        resize: none;
+        width: auto;
+    }
+    &__subgenre {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__new-subgenre {
+        align-items: center;
+        input[type="checkbox"] {
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+        &--desc {
+            font-size: 14px;
+        }
+    }
+}
+
+.lib {
+    &__title {
+        margin-bottom: 2rem;
+    }
+}
+
+.genres {
+    flex-flow: wrap;
+    width: 33.5rem;
+    margin-top: 3rem;
+}
