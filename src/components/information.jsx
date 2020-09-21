@@ -90,7 +90,7 @@ const Information = ({ onAddBook, onBackStep, isDescriptionRequired }) => {
   };
 
   return (
-    <div>
+    <div className="genres">
       <div className="grid-x">
         <label className="book__label">
           Book title

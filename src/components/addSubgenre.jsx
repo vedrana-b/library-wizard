@@ -63,7 +63,7 @@ const AddNewSubgenre = ({ onAddNewSubgenre, onNextStep, onBackStep }) => {
   };
 
   return (
-    <div>
+    <div className="genres">
       <div className="grid-x error">
         <label className="book__subgenre">
           <input
