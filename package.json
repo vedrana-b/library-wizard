@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "font-awesome": "^4.7.0",
     "joi-browser": "^13.4.0",
+    "gh-pages": "^3.1.0",
     "lodash": "^4.17.20",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -17,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
