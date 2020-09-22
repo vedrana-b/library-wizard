@@ -16,6 +16,11 @@ const Information = ({ onAddBook, onBackStep, isDescriptionRequired }) => {
     editionLang: "",
   });
 
+  /**
+   * 1. Validates form
+   * 2. Passing book information to parent component if there is no error
+   * 3. Sets errors if present
+   */
   const handleSuccess = () => {
     setErrors([]);
     const validationResult = validate();
@@ -26,6 +31,9 @@ const Information = ({ onAddBook, onBackStep, isDescriptionRequired }) => {
     }
   };
 
+  /**
+   * Validates form
+   */
   const validate = () => {
     const schema = Joi.object({
       title: Joi.string().required().error(setErrorMessage("Title")),
@@ -55,10 +63,21 @@ const Information = ({ onAddBook, onBackStep, isDescriptionRequired }) => {
   const backHandler = () => {
     onBackStep();
   };
+
+   /**
+   * Returns error for field with name provided
+   * 
+   * @param {string} prop - field name
+   */
   const getError = (prop) => {
     return errors && errors.find((err) => err.path.includes(prop));
   };
 
+  /**
+   * Used for setting custom error messages
+   * 
+   * @param {string} prop - field name
+   */
   const setErrorMessage = (prop) => {
     return (errors) => {
       errors.forEach((err) => {

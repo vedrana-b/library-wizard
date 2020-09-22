@@ -6,10 +6,17 @@ const AddNewSubgenre = ({ onAddNewSubgenre, onNextStep, onBackStep }) => {
   const [name, setName] = useState("");
   const [errors, setErrors] = useState([]);
 
+  /**
+   * Sets isDescriptionRequired to true/false based on checkbox
+   */
   const handleDescription = () => {
-    setDescription(true);
+    setDescription(!description);
   };
 
+  /**
+   * Performs next step.
+   * If name is not provided, user cannot go to next step
+   */
   const nextHandler = () => {
     const validationResult = validate();
     if (!validationResult.error) {
@@ -24,6 +31,10 @@ const AddNewSubgenre = ({ onAddNewSubgenre, onNextStep, onBackStep }) => {
     setName(input.value);
   };
 
+  /**
+   * Validates new subgenre.
+   * Returns error if name is not provided
+   */
   const validate = () => {
     const result = {
       description,
@@ -55,9 +66,15 @@ const AddNewSubgenre = ({ onAddNewSubgenre, onNextStep, onBackStep }) => {
     return schema.validate(result);
   };
 
+  /**
+   * Returns error for field with name provided
+   * 
+   * @param {string} prop - field name
+   */
   const getError = (prop) => {
     return errors && errors.find((err) => err.path.includes(prop));
   };
+  
   const backHandler = () => {
     onBackStep();
   };

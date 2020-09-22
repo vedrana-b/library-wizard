@@ -8,11 +8,15 @@ const Genres = ({
   selectedGenre: bookGenre,
 }) => {
   const [selectedGenre, setSelectedGenre] = useState(bookGenre);
-
+    
   const handleGenres = (genre) => {
     setSelectedGenre(genre);
   };
 
+  /**
+   * Validates selected genre.
+   * Returns error if no genre is selected
+   */
   const validation = () => {
     const schema = Joi.object({
       id: Joi.number().required(),
@@ -22,6 +26,10 @@ const Genres = ({
     return schema.validate(selectedGenre);
   };
 
+  /**
+   * Perform next step.
+   * If genre is not selected, user cannot go to next step
+   */
   const nextHandler = () => {
     if (!validation().error) {
       onAddGenre(selectedGenre);

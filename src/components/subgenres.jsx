@@ -13,16 +13,29 @@ const Subgenres = ({
   const [selectedSubgenre, setSelectedSubgenre] = useState(bookSubgenre);
   const [addNewSubgenre, setAddNewSubgenre] = useState(newSubgenre);
 
+  /**
+   * Sets selected standard subgenre.
+   *
+   * @param {{id:string, name: string, isDescriptionRequired:boolean}} subgenre
+   */
   const handleSubgenres = (subgenre) => {
     setAddNewSubgenre(false);
     setSelectedSubgenre(subgenre);
   };
 
+  /**
+   * Sets flag for adding custom subgenre
+   */
   const handleAddNewSubgenre = () => {
     setAddNewSubgenre(true);
     setSelectedSubgenre({});
   };
 
+  /**
+   * Perform next step.
+   * If standard subgenre is not selected or option for adding new subgenre
+   * then user cannot go to next step
+   */
   const nextHandler = () => {
     if (!validateSubgenres().error !== !validateAddNew().error) {
       onAddSubgenre(selectedSubgenre);
@@ -33,6 +46,10 @@ const Subgenres = ({
     }
   };
 
+  /**
+   * Validates selected subgenre.
+   * Returns error if no standard subgenre is selected
+   */
   const validateSubgenres = () => {
     const subgenreSchema = Joi.object({
       id: Joi.number().required(),
@@ -42,6 +59,10 @@ const Subgenres = ({
     return subgenreSchema.validate(selectedSubgenre);
   };
 
+  /**
+   * Validates if option for adding new subgenre is selected
+   * Return error if option is not selected
+   */
   const validateAddNew = () => {
     const addNewSchema = Joi.boolean().valid(true).required();
     return addNewSchema.validate(addNewSubgenre);
